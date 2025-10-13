@@ -21,6 +21,7 @@
     ../../home/programs/discord
     ../../home/programs/tailscale
     ../../home/programs/fcitx5
+    ../../home/programs/opencode
 
     # Scripts
     ../../home/scripts # All scripts
@@ -51,7 +52,6 @@
       mpv # Video player
       firefox
       zotero
-      opencode
 
       # Privacy
       session-desktop # Session app, private messages
