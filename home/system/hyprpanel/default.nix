@@ -37,7 +37,7 @@ in {
       bar.layouts = {
         "*" = {
           left = ["dashboard" "workspaces" "windowtitle"];
-          middle = ["media" "cava"];
+          middle = ["media"];
           right = [
             "systray"
             "volume"
