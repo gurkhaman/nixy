@@ -2,21 +2,18 @@
   wayland.windowManager.hyprland.settings = {
     bind =
       [
-        "$mod,RETURN, exec, uwsm app -- ${pkgs.kitty}/bin/kitty" # Kitty
-        "$mod,E, exec,  uwsm app -- ${pkgs.xfce.thunar}/bin/thunar" # Thunar
-        "$mod,B, exec,  uwsm app -- ${pkgs.brave}/bin/brave" # Brave Browser
-        "$mod,K, exec,  uwsm app -- ${pkgs.proton-pass}/bin/proton-pass" # Proton Pass
-        "$mod,M, exec,  uwsm app -- ${pkgs.protonmail-desktop}/bin/proton-mail" # Proton Mail
-        "$mod,V, exec,  uwsm app -- ${pkgs.protonvpn-gui}/bin/protonvpn-app" # Proton VPN
-        "$mod,A, exec,  uwsm app -- ${pkgs.proton-authenticator}/bin/proton-authenticator" # Proton Authenticator
+        "$mod,T, exec, uwsm app -- ${pkgs.alacritty}/bin/alacritty" # Kitty
+        "$mod,F, exec,  uwsm app -- ${pkgs.xfce.thunar}/bin/thunar" # Thunar
+        "$mod,B, exec,  uwsm app -- ${pkgs.firefox}/bin/firefox" # Firefox Browser
         "$mod,L, exec,  uwsm app -- ${pkgs.hyprlock}/bin/hyprlock" # Lock
         "$mod,X, exec, powermenu" # Powermenu
-        "$mod,SPACE, exec, vicinae" # Launcher
+        "$mod,D, exec, vicinae" # Launcher
+        "$shiftMod,V, exec, vicinae --clipboard" # Launcher
         "$shiftMod,SPACE, exec, hyprfocus-toggle" # Toggle HyprFocus
 
-        "$mod,Q, killactive," # Close window
-        "$mod,T, togglefloating," # Toggle Floating
-        "$mod,F, fullscreen" # Toggle Fullscreen
+        "$mod,W, killactive," # Close window
+        "$mod,V, togglefloating," # Toggle Floating
+        "$shiftMod,F, fullscreen" # Toggle Fullscreen
         "$mod,left, movefocus, l" # Move focus left
         "$mod,right, movefocus, r" # Move focus Right
         "$mod,up, movefocus, u" # Move focus Up
@@ -26,7 +23,7 @@
         "$shiftMod,left, layoutmsg, addmaster" # Add to master
         "$shiftMod,right, layoutmsg, removemaster" # Remove from master
 
-        "$mod,PRINT, exec, screenshot region" # Screenshot region
+        "$shiftMod,S, exec, screenshot region" # Screenshot region
         ",PRINT, exec, screenshot monitor" # Screenshot monitor
         "$shiftMod,PRINT, exec, screenshot window" # Screenshot window
         "ALT,PRINT, exec, screenshot region swappy" # Screenshot region then edit

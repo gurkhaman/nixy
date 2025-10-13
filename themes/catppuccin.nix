@@ -7,9 +7,9 @@
   options.theme = lib.mkOption {
     type = lib.types.attrs;
     default = {
-      rounding = 17;
-      gaps-in = 8;
-      gaps-out = 8 * 2;
+      rounding = 5;
+      gaps-in = 2.5;
+      gaps-out = 5;
       active-opacity = 0.97;
       inactive-opacity = 0.94;
       blur = true;
@@ -57,7 +57,7 @@
     cursor = {
       name = "phinger-cursors-light";
       package = pkgs.phinger-cursors;
-      size = 20;
+      size = 25;
     };
 
     fonts = {

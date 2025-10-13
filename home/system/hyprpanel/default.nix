@@ -27,7 +27,6 @@
   location = config.var.location;
 
   homeDir = "/home/${config.var.username}";
-
 in {
   wayland.windowManager.hyprland.settings.exec-once = ["hyprpanel"];
 
@@ -35,16 +34,13 @@ in {
     enable = true;
 
     settings = {
-
       bar.layouts = {
         "*" = {
-          left = [ "dashboard" "workspaces" "windowtitle" ];
-          middle = [ "media" "cava" ];
+          left = ["dashboard" "workspaces" "windowtitle"];
+          middle = ["media" "cava"];
           right = [
             "systray"
             "volume"
-            "bluetooth"
-            "battery"
             "network"
             "clock"
             "notifications"
@@ -107,12 +103,12 @@ in {
       theme.bar.menus.menu.media.card.tint = 90;
 
       bar.launcher.icon = "";
-      bar.workspaces.show_numbered = false;
-      bar.workspaces.workspaces = 5;
+      bar.workspaces.show_numbered = true;
+      bar.workspaces.workspaces = 6;
       bar.workspaces.numbered_active_indicator = "color";
-      bar.workspaces.monitorSpecific = false;
+      bar.workspaces.monitorSpecific = true;
       bar.workspaces.applicationIconEmptyWorkspace = "";
-      bar.workspaces.showApplicationIcons = true;
+      bar.workspaces.showApplicationIcons = false;
       bar.workspaces.showWsIcons = true;
 
       bar.windowtitle.label = true;

@@ -19,7 +19,6 @@ in {
     ./animations.nix
     ./bindings.nix
     ./polkitagent.nix
-    ./keyboard-backlight.nix # CHANGEME: This is for omen laptop only
   ];
 
   home.packages = with pkgs; [
@@ -64,14 +63,21 @@ in {
       exec-once = [
         "dbus-update-activation-environment --systemd --all &"
         "systemctl --user enable --now hyprpaper.service &"
-        "systemctl --user enable --now nextcloud-client.service  &"
+        "fcitx5 -d"
       ];
 
       monitor = [
-        "eDP-2,highres,0x0,1" # My internal laptop screen
-        "desc:AOC U34G2G1 0x00000E06,3440x1440@99.98,auto,1" # My external monitor
-        "desc:United Microelectr Corporation UMC SHARP,3840x2160,auto,2" # TV
-        ",prefered,auto,1" # default
+        "DP-2,prefered,auto,1.25" # default
+        "DP-3,prefered,auto,1.25" # default
+      ];
+
+      workspace = [
+        "1, monitor:DP-2, persistent:true, default:true"
+        "2, monitor:DP-2, persistent:true"
+        "6, monitor:DP-3, persistent:true, default:true"
+        "7, monitor:DP-3, persistent:true"
+        "8, monitor:DP-3, persistent:true"
+        "9, monitor:DP-3, persistent:true"
       ];
 
       env = [
@@ -96,12 +102,13 @@ in {
         "WLR_NO_HARDWARE_CURSORS,1"
         "SDL_VIDEODRIVER,wayland"
         "CLUTTER_BACKEND,wayland"
-        "AQ_DRM_DEVICES,/dev/dri/card2:/dev/dri/card1" # CHANGEME: Related to the GPU
+        "AQ_DRM_DEVICES,/dev/dri/card1"
+        "GDK_SCALE,1.25"
       ];
 
       cursor = {
         no_hardware_cursors = true;
-        default_monitor = "eDP-2";
+        default_monitor = "DP-3";
       };
 
       general = {
@@ -187,7 +194,7 @@ in {
 
         kb_options = "caps:escape";
         follow_mouse = 1;
-        sensitivity = 0.5;
+        sensitivity = -0.9;
         repeat_delay = 300;
         repeat_rate = 50;
         numlock_by_default = true;
