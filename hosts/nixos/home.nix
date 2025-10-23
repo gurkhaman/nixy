@@ -8,9 +8,9 @@
     ./variables.nix
 
     # Programs
-    ../../home/programs/kitty
-    #../../home/programs/nvf
-    ../../home/programs/neovim
+    ../../home/programs/alacritty
+    ../../home/programs/nvf
+    #../../home/programs/neovim
     ../../home/programs/shell
     ../../home/programs/fetch
     ../../home/programs/git
@@ -67,6 +67,8 @@
       pnpm
       air
       duckdb
+      uv
+      claude-code
 
       # Utils
       zip
@@ -96,7 +98,7 @@
   };
   services.gnome-keyring = {
     enable = true;
-    components = [ "secrets" ];
+    components = ["secrets"];
   };
   programs.home-manager.enable = true;
 }

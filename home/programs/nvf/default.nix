@@ -1,4 +1,4 @@
-# NVF is a Neovim configuration that provides a minimal setup with essential plugins and configurations.
+# NVF Configuration - Kickstart-inspired Neovim setup
 {
   inputs,
   pkgs,
@@ -6,13 +6,14 @@
 }: {
   imports = [
     inputs.nvf.homeManagerModules.default
-    ./options.nix
-    ./languages.nix
-    ./picker.nix
-    ./snacks.nix
-    ./keymaps.nix
-    ./utils.nix
-    ./mini.nix
+    ./options.nix # Core vim options and settings
+    ./theme.nix # Colorscheme configuration
+    ./keymaps.nix # Keybindings (Kickstart-based)
+    ./languages.nix # LSP, treesitter, and language support
+    ./picker.nix # Telescope/Snacks picker configuration
+    ./snacks.nix # Snacks.nvim features
+    ./utils.nix # Utility plugins (completion, statusline, etc.)
+    ./mini.nix # Mini.nvim modules
   ];
 
   programs.nvf = {

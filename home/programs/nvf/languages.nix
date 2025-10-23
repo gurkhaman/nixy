@@ -8,33 +8,26 @@
       enable = true;
       config = {
         signs = {
-          text = {
-            "vim.diagnostic.severity.Error" = " ";
-            "vim.diagnostic.severity.Warn" = " ";
-            "vim.diagnostic.severity.Hint" = " ";
-            "vim.diagnostic.severity.Info" = " ";
-          };
+          text = lib.generators.mkLuaInline ''
+            {
+              [vim.diagnostic.severity.ERROR] = " ";
+              [vim.diagnostic.severity.WARN] = " ";
+              [vim.diagnostic.severity.HINT] = " ";
+              [vim.diagnostic.severity.INFO] = " ";
+            }
+          '';
         };
         underline = true;
         update_in_insert = true;
-        virtual_text = {
-          format =
-            lib.generators.mkLuaInline
-            /*
-            lua
-            */
-            ''
-              function(diagnostic)
-                return string.format("%s", diagnostic.message)
-                --return string.format("%s (%s)", diagnostic.message, diagnostic.source)
-              end
-            '';
-        };
+
+        # Disable inline virtual text - use Trouble panel instead
+        virtual_text = false;
       };
       nvim-lint = {
         enable = true;
       };
     };
+
     syntaxHighlighting = true;
     treesitter = {
       enable = true;
@@ -67,19 +60,10 @@
         };
       };
       lspkind.enable = true;
-      lspsaga = {
-        enable = true;
-        setupOpts = {
-          ui = {
-            code_action = "";
-          };
-          lightbulb = {
-            sign = false;
-            virtual_text = true;
-          };
-          breadcrumbs.enable = false;
-        };
-      };
+
+      # Disable LSPSaga for cleaner UI (Kickstart-style)
+      # LSPSaga adds extra UI elements that can clutter the screen
+      lspsaga.enable = false;
     };
     languages = {
       enableDAP = true;
@@ -109,6 +93,7 @@
       bash.enable = true;
       nix.enable = true;
       tailwind.enable = true;
+      python.enable = true;
     };
     formatter = {
       conform-nvim = {

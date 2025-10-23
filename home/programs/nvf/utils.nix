@@ -5,11 +5,29 @@
       motion.flash-nvim.enable = true;
       outline.aerial-nvim.enable = true;
     };
-    tabline.nvimBufferline.enable = true;
+    tabline.nvimBufferline.enable = false;
     notes.todo-comments.enable = true;
     assistant.copilot = {
       enable = true;
-      cmp.enable = true;
+      cmp.enable = false;
+
+      mappings.suggestion = {
+        accept = "<M-l>"; # Accept with Tab
+        next = "<M-]>"; # Next suggestion
+        prev = "<M-[>"; # Previous suggestion
+        dismiss = "<C-]>"; # Dismiss suggestion
+      };
+
+      setupOpts = {
+        suggestion = {
+          enabled = true;
+          auto_trigger = true;
+          debounce = 75;
+        };
+        panel = {
+          enabled = false;
+        };
+      };
     };
     statusline.lualine.enable = true;
 
@@ -29,7 +47,7 @@
 
     snippets.luasnip.enable = true;
     ui = {
-      noice.enable = true;
+      noice.enable = false;
       colorizer.enable = true;
     };
     git = {

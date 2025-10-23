@@ -14,6 +14,9 @@
       zen.enabled = true;
       bufdelete.enabled = true;
       gitsigns.enabled = true;
+      lazygit.enabled = true;
+
+      cli.enabled = true;
     };
   };
 }

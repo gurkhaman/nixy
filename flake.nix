@@ -27,24 +27,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     eleakxir.url = "github:anotherhadi/eleakxir";
+    claude-code.url = "github:sadjow/claude-code-nix";
   };
 
   outputs = inputs @ {nixpkgs, ...}: {
     nixosConfigurations = {
-      nixos =
-        nixpkgs.lib.nixosSystem {
-          modules = [
-            {
-              nixpkgs.overlays = [];
-              _module.args = {
-                inherit inputs;
-              };
-            }
-            inputs.home-manager.nixosModules.home-manager
-            inputs.stylix.nixosModules.stylix
-            ./hosts/nixos/configuration.nix 
-          ];
-        };
+      nixos = nixpkgs.lib.nixosSystem {
+        modules = [
+          {
+            nixpkgs.overlays = [inputs.claude-code.overlays.default];
+            _module.args = {
+              inherit inputs;
+            };
+          }
+          inputs.home-manager.nixosModules.home-manager
+          inputs.stylix.nixosModules.stylix
+          ./hosts/nixos/configuration.nix
+        ];
+      };
     };
   };
 }

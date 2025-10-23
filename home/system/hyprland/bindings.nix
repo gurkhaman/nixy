@@ -6,6 +6,8 @@
         "$mod,F, exec,  uwsm app -- ${pkgs.xfce.thunar}/bin/thunar" # Thunar
         "$mod,B, exec,  uwsm app -- ${pkgs.firefox}/bin/firefox" # Firefox Browser
         "$mod,L, exec,  uwsm app -- ${pkgs.hyprlock}/bin/hyprlock" # Lock
+        "$mod,O, exec,  uwsm app -- ${pkgs.obsidian}/bin/obsidian" # Lock
+        "$mod,N, exec, uwsm app -- ${pkgs.alacritty}/bin/alacritty -e nvim" # Neovim
         "$mod,X, exec, powermenu" # Powermenu
         "$mod,D, exec, vicinae" # Launcher
         "$shiftMod,V, exec, vicinae --clipboard" # Launcher
