@@ -9,8 +9,7 @@
         "$mod,O, exec,  uwsm app -- ${pkgs.obsidian}/bin/obsidian" # Lock
         "$mod,N, exec, uwsm app -- ${pkgs.alacritty}/bin/alacritty -e nvim" # Neovim
         "$mod,X, exec, powermenu" # Powermenu
-        "$mod,D, exec, vicinae" # Launcher
-        "$shiftMod,V, exec, vicinae --clipboard" # Launcher
+        "$mod,D, exec, menu" # Launcher
         "$shiftMod,SPACE, exec, hyprfocus-toggle" # Toggle HyprFocus
 
         "$mod,W, killactive," # Close window

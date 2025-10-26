@@ -69,6 +69,7 @@ in {
         nvidiaBusId = "PCI:1:0:0"; # Dedicated Nvidia GPU
       };
     };
+    nvidia-container-toolkit.enable = true; # Support for Docker with Nvidia GPUs
 
     # Enhanced graphics support
     graphics = {

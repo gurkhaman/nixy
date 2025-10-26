@@ -3,7 +3,7 @@
   # Obviously, change this to your own SSH key.
   home.file.".ssh/allowed_signers".text = "* $(cat ~/.ssh/github.pub)";
 
-  programs.git.extraConfig = {
+  programs.git.settings = {
     commit.gpgsign = true;
     gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
     gpg.format = "ssh";

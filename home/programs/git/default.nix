@@ -1,12 +1,14 @@
 # Git configuration
-{config, pkgs, ...}: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   username = config.var.git.username;
   email = config.var.git.email;
 in {
   programs.git = {
     enable = true;
-    userName = username;
-    userEmail = email;
     ignores = [
       ".cache/"
       ".DS_Store"
@@ -19,14 +21,16 @@ in {
       "result"
       "result-*"
     ];
-    extraConfig = {
+    settings = {
+      user.name = username;
+      user.email = email;
       init.defaultBranch = "main";
       pull.rebase = "false";
       push.autoSetupRemote = true;
       color.ui = "1";
       credential.helper = "${
-          pkgs.git.override { withLibsecret = true; }
-        }/bin/git-credential-libsecret";
+        pkgs.git.override {withLibsecret = true;}
+      }/bin/git-credential-libsecret";
     };
   };
 }
