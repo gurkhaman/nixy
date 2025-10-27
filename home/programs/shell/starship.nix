@@ -15,6 +15,7 @@ in {
         "$nix_shell"
         "$hostname"
         "$directory"
+        "$python"
         "$git_branch"
         "$git_state"
         "$git_status"
@@ -52,6 +53,12 @@ in {
       git_state = {
         format = "([$state( $progress_current/$progress_total)]($style)) ";
         style = "bright-black";
+      };
+
+      python = {
+        format = "via [$symbol$virtualenv]($style) ";
+        symbol = " ";
+        style = "yellow";
       };
     };
   };
