@@ -41,7 +41,6 @@
     lsp = {
       enable = true;
       trouble.enable = true;
-      lspSignature.enable = true;
       lspconfig.enable = true;
       formatOnSave = true;
       inlayHints.enable = true;
